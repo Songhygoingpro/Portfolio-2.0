@@ -29,6 +29,8 @@
       font-size: 1.2rem;
     }
 
+
+
     #contact {
       width: 6rem;
       height: 2rem;
@@ -136,14 +138,14 @@
         flex-direction: column-reverse;
       }
 
-      .phbp-pd {
-        display: none;
-      }
-
       .phbg-footer {
         font-size: 0.8rem;
       }
-
+ .form {
+    width:auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+   }
       .ux-phbg {
         display: flex;
         column-gap: 0.8rem;
@@ -155,20 +157,9 @@
         row-gap: 0.5rem;
       }
 
-      .words {
-        width: 15rem;
-        overflow-x: visible;
-        position: relative;
-        animation: move-words 20s linear infinite;
-        margin: 0;
+      .pdbp {
+        display: none;
       }
-
-   .form {
-    width:auto;
-    padding-right: 1rem;
-    padding-left: 1rem;
-   }
-
     }
 
     @media (min-width: 1024px) {
@@ -176,6 +167,7 @@
         width: 17rem;
         height: 19rem;
       }
+
 
       .services {
         width: 14rem;
@@ -210,6 +202,8 @@
         left: -100%;
       }
     }
+
+   
 
     .content {
       width: 100%;
@@ -249,7 +243,7 @@
       text-align: left;
       position: fixed;
       right: 0;
-      top: 0;
+      /* top: 0; */
       z-index: 201;
       font-family: "Poppins";
     }
@@ -266,6 +260,7 @@
       transition: all 0.5s cubic-bezier(0.62, 0.43, 0.35, 1.47);
     }
 
+    
     #check:checked~.button1 span:nth-child(1) {
       width: 100%;
       transform: rotate(45deg) translateY(6px) translateX(6px);
@@ -318,11 +313,50 @@
       opacity: 1;
       transform: scale(1);
     }
+
+    #navbar {
+      position: fixed;
+      width: 100%;
+      z-index: 200;
+      transition: top 0.3s;
+      top: -50px;
+      right:0;
+    }
+
+    @media (max-width: 768px) {
+      .button1 {
+      width: 48px;
+      height: 48px;
+      background: rgb(255, 196, 0);
+      padding: 12px;
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+      padding-top: 8px;
+      line-height: 8px;
+      text-align: left;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 201;
+      font-family: "Poppins";
+    }
+
+    #navbar {
+      position: fixed;
+      width: 100%;
+      z-index: 200;
+      transition: top 0.3s;
+      top: 0px;
+      right:0;
+    }
+    }
+
   </style>
 </head>
 
 <body>
-  <div class="menu md:hidden">
+  <div class="menu " id="navbar">
     <input type="checkbox" id="check" />
     <label for="check" id="checked" class="button1">
       <span></span>
@@ -337,183 +371,173 @@
     </nav1>
   </div>
 
-  <div class="content">
-    <section id="landing-page" class="h-[100vh]">
-      <header
-        class="flex justify-start md:justify-around w-[100%] sm:max-md:h-[5rem] h-[3rem] md:h-[5rem] items-center border-[1px] md:border-2">
-        <div id="logo" class="text-[1.2rem] sm:max-md:text-2xl pl-6 md:text-3xl font-[800] font-['honk']">
-          HS.DEV
-        </div>
-        <nav class="list-none md:gap-x-5 md:flex hidden">
-          <li
-            class="font-[500] text-[1rem] nav-items hover:text-xl transition-all flex justify-center items-center w-[4.5rem] h-[1.82rem] hover:text-black">
-            <a href="#landing-page" class="">HOME</a>
-          </li>
-          <li
-            class="font-[500] text-[1rem] nav-items hover:text-xl transition-all flex justify-center items-center w-[6rem] h-[1.82rem] hover:text-black">
-            <a href="#service-page">SERVICES</a>
-          </li>
-          <li
-            class="font-[500] text-[1rem] nav-items hover:text-xl transition-all flex justify-center items-center w-[8rem] h-[1.82rem] hover:text-black">
-            <a href="#portfolio-page">PORTFOLIO</a>
-          </li>
-          <li
-            class="font-[500] text-[1rem] nav-items hover:text-xl transition-all flex justify-center items-center w-[4.5rem] h-[1.82rem] hover:text-black">
-            <a href="#skill-page">SKILLS</a>
-          </li>
-        </nav>
+<div class="content">
+  <section id="landing-page" class="h-[100vh]">
+    <header
+      class="flex justify-start md:justify-around w-[100%] sm:max-md:h-[5rem] h-[3rem] md:h-[5rem] items-center border-[1px] md:border-2">
+      <div id="logo" class="text-[1.2rem] sm:max-md:text-2xl pl-6 md:text-3xl font-[800] font-['honk']">
+        HS.DEV
+      </div>
+      <nav class="list-none md:gap-x-5 md:flex hidden">
+        <li
+          class="font-[500] text-[1rem] nav-items hover:text-xl transition-all flex justify-center items-center w-[4.5rem] h-[1.82rem] hover:text-black">
+          <a href="#landing-page" class="">HOME</a>
+        </li>
+        <li
+          class="font-[500] text-[1rem] nav-items hover:text-xl transition-all flex justify-center items-center w-[6rem] h-[1.82rem] hover:text-black">
+          <a href="#service-page">SERVICES</a>
+        </li>
+        <li
+          class="font-[500] text-[1rem] nav-items hover:text-xl transition-all flex justify-center items-center w-[8rem] h-[1.82rem] hover:text-black">
+          <a href="#portfolio-page">PORTFOLIO</a>
+        </li>
+        <li
+          class="font-[500] text-[1rem] nav-items hover:text-xl transition-all flex justify-center items-center w-[4.5rem] h-[1.82rem] hover:text-black">
+          <a href="#skill-page">SKILLS</a>
+        </li>
+      </nav>
 
-        <button id="contact"
-          class="outline-[#bb4502] hover:text-[#e5daca] text-[#bb4502] outline outline-2 outline-offset-2 md:flex justify-center items-center hidden hover:transition-[background-color] hover:bg-[#bb4502]">
-          <a href="#contact-page">CONTACT</a>
-        </button>
+      <button id="contact"
+        class="outline-[#bb4502] hover:text-[#e5daca] text-[#bb4502] outline outline-2 outline-offset-2 md:flex justify-center items-center hidden hover:transition-[background-color] hover:bg-[#bb4502]">
+        <a href="#contact-page">CONTACT</a>
+      </button>
+    </header>
+    <article class="justify-center items-center md:flex">
+      <div class="md:gap-x-10 gap-y-8 md:items-center md:flex mds:grid flex items-center justify-center">
+        <div class="gap-y-8">
+          <p class="leading-10 text-[1.2rem] sm:max-md:text-2xl md:text-3xl align-text sm:text-left text-center">
+            HELLO, I’M SONGHY, A<br />
+            UX/UI DESIGNER<br class="md:hidden block" />/STRATEGIST<br />
+            AND DEVELOPER.
+          </p>
+          <div class="flex gap-x-4 mt-3 ">
+            <div class="flex items-center gap-x-2">
+              <div class="md:w-[13px] md:h-[13px] md:rounded-xl w-[8px] h-[8px] rounded-xl bg-[#bb4502]"></div>
+              <p class="font-[800] text-[0.8rem] md:text-[1rem]">
+                Designer
+              </p>
+            </div>
+            <div class="flex items-center gap-x-2">
+              <div class="md:w-[13px] md:h-[13px] md:rounded-xl w-[8px] h-[8px] rounded-xl bg-[#bb4502]"></div>
+              <p class="font-[800] text-[0.8rem] md:text-[1rem]">
+                Developer
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pfbg md:w-52 md:h-52 w-40 h-40 sm:max-md:w-48 sm:max-md:h-48 grid justify-center items-end">
+          <img src="../img/pf.png" alt="" class="pf md:w-48 md:h-48 w-36 h-36 sm:max-md:w-44 sm:max-md:h-44" />
+        </div>
+      </div>
+    </article>
+    <div class="self-end star flex">
+      <h1 class="words flex md:gap-x-16 md:w-[100%] font-[800] justify-between items-center md:h-20 h-16">
+        <div class="flex gap-x-2">
+          <span class="span md:text-[1.5rem] text-[1rem]">*</span>
+          <div class="md:text-[1rem] text-[0.8rem] pr-6">UI/UX</div>
+        </div>
+        <div class="flex gap-x-2">
+          <span class="span md:text-[1.5rem] text-[1rem]">*</span>
+          <div class="md:text-[1rem] text-[0.8rem] pr-6">DEVELOPMENT</div>
+        </div>
+        <div class="flex gap-x-2 pdbp">
+          <span class="span md:text-[1.5rem] text-[1rem]">*</span>
+          <div class="md:w-[10.5rem] md:text-[1rem] text-[0.8rem] pr-6">
+            PRODUCT DESIGN
+          </div>
+        </div>
+        <div class="flex gap-x-2">
+          <span class="span md:text-[1.5rem] text-[1rem]">*</span>
+          <div class="md:text-[1rem] text-[0.8rem] pr-6">POSTURE</div>
+        </div>
+      </h1>
+    </div>
+  </section>
+  <section id="service-page" class="h-[100vh] grid items-start">
+    <div class="service grid justify-center items-center lg:gap-y-6 md:pt-4 lg:pt-11 pt-4 md:gap-y-4 gap-y-2">
+      <header class="flex justify-center items-center">
+        <p class="lg:text-3xl font-[700] text-2xl">Our Services</p>
       </header>
-      <article class="justify-center items-center md:flex">
-        <div class="md:gap-x-10 gap-y-8 md:items-center md:flex mds:grid flex items-center justify-center">
-          <div class="gap-y-8">
-            <p class="leading-10 text-[1.2rem] sm:max-md:text-2xl md:text-3xl align-text sm:text-left text-center">
-              HELLO, I’M SONGHY, A<br />
-              UX/UI DESIGNER<br class="md:hidden block" />/STRATEGIST<br />
-              AND DEVELOPER.
-            </p>
-            <div class="flex gap-x-4 mt-3 justify-center">
-              <div class="flex items-center gap-x-2">
-                <div class="md:w-[13px] md:h-[13px] md:rounded-xl w-[8px] h-[8px] rounded-xl bg-[#bb4502]"></div>
-                <p class="font-[800] text-[0.8rem] md:text-[1rem]">
-                  Designer
-                </p>
-              </div>
-              <div class="flex items-center gap-x-2">
-                <div class="md:w-[13px] md:h-[13px] md:rounded-xl w-[8px] h-[8px] rounded-xl bg-[#bb4502]"></div>
-                <p class="font-[800] text-[0.8rem] md:text-[1rem]">
-                  Developer
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="pfbg md:w-52 md:h-52 w-40 h-40 sm:max-md:w-48 sm:max-md:h-48 grid justify-center items-end">
-            <img src="../img/pf.png" alt="" class="pf md:w-48 md:h-48 w-36 h-36 sm:max-md:w-44 sm:max-md:h-44" />
-          </div>
+      <div class=" lg:gap-x-4 gap-x-3 lg:gap-y-0 gap-y-3 grid justify-center sm:flex items-center lg:flex">
+        <div class="services ">
+          <img src="../img/ux-design.png" class="lg:w-8 w-6 lg:h-8 h-6" alt="" />
+          <p class="font-[700] lg:text-[1rem] text-[0.8rem]">UI/UX Design</p>
         </div>
-      </article>
-      <div class="self-end star flex">
-        <h1 class="words flex md:gap-x-16 md:w-[100%] font-[800] justify-between items-center md:h-20 h-16">
-          <div class="flex gap-x-2">
-            <span class="span md:text-[1.5rem] text-[1rem]">*</span>
-            <div class="md:text-[1rem] text-[0.8rem] pr-6">UI/UX</div>
-          </div>
-          <div class="flex gap-x-2">
-            <span class="span md:text-[1.5rem] text-[1rem]">*</span>
-            <div class="md:text-[1rem] text-[0.8rem] pr-6">DEVELOPMENT</div>
-          </div>
-          <div class="flex gap-x-2 phbp-pd">
-            <span class="span md:text-[1.5rem] text-[1rem]">*</span>
-            <div class="md:w-[10.5rem] md:text-[1rem] text-[0.8rem] pr-6 phbp-pd">
-              PRODUCT DESIGN
-            </div>
-          </div>
-          <div class="flex gap-x-2">
-            <span class="span md:text-[1.5rem] text-[1rem]">*</span>
-            <div class="md:text-[1rem] text-[0.8rem] pr-6">POSTURE</div>
-          </div>
-        </h1>
-      </div>
-    </section>
-    <section id="service-page" class="h-[100vh] grid items-start">
-      <div class="service grid justify-center items-center lg:gap-y-6 md:pt-4 lg:pt-11 pt-4 md:gap-y-4 gap-y-2">
-        <header class="flex justify-center items-center">
-          <p class="lg:text-3xl font-[700] text-2xl">Our Services</p>
-        </header>
-        <div class="lg:gap-x-4 gap-x-3 lg:gap-y-0 gap-y-3 grid justify-center sm:flex items-center lg:flex">
-          <div class="services">
-            <img src="../img/ux-design.png" class="lg:w-8 w-6 lg:h-8 h-6" alt="" />
-            <p class="font-[700] lg:text-[1rem] text-[0.8rem]">
-              UI/UX Design
-            </p>
-          </div>
-          <div class="services">
-            <img src="../img/web-developer.png" alt="" class="lg:w-8 w-6 lg:h-8 h-6" />
-            <p class="font-[700] lg:text-[1rem] text-[0.8rem]">
-              Web Development
-            </p>
-          </div>
+        <div class="services ">
+          <img src="../img/web-developer.png" alt="" class="lg:w-8 w-6 lg:h-8 h-6" />
+          <p class="font-[700] lg:text-[1rem] text-[0.8rem]">Web Development</p>
+        </div>
 
-          <div class="services">
-            <img src="../img/vector.png" alt="" class="lg:w-8 w-6 lg:h-8 h-6" />
-            <p class="font-[700] lg:text-[1rem] text-[0.8rem]">
-              Graphic Design
+        <div class="services">
+          <img src="../img/vector.png" alt="" class="lg:w-8 w-6 lg:h-8 h-6" />
+          <p class="font-[700] lg:text-[1rem] text-[0.8rem]">Graphic Design</p>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio grid justify-center items-center lg:gap-y-6 md:gap-y-4 gap-y-2">
+      <header class="flex justify-center items-center">
+        <p class="lg:text-3xl font-[700] text-2xl">Portfolio</p>
+      </header>
+      <div class=" lg:gap-x-4 gap-x-2 md:flex grid gap-y-2 px-5">
+        <span
+          class="bg-[rgba(0,0,0,0.86)] rounded-[0.625rem]  hover:translate-y-1 gap-y-4 hover:-translate-x-1 transition-all md:w-[14rem] md:h-[16rem] lgs:w-1">
+          <a href="#"
+            class="port sm:py-5 sm:px-5 lg:py-5 lg:px-5  py-3 px-3 hover:-translate-y-2 gap-y-4 hover:translate-x-2 transition-all lgs:w-1 md:w-[14rem] md:h-[16rem]">
+            <span class=" ux-phbg flex md:grid gap-x-2"><img src="../img/figma.png" class="lg:w-8 lg:h-8 w-6 h-6" alt="" />
+              <p class="font-[700]">
+                <span class="underline decoration-sky-500 lg:text-xl text-[1rem] text-black">UI/UX</span>
+                Design
+              </p>
+            </span>
+            <p class="lg:text-[1rem] text-[0.8rem]">
+              Crafting intuitive interfaces that prioritize user engagement,
+              my UI/UX design expertise seamlessly blends creativity with
+              functionality for a where empathy meets innovation.
             </p>
-          </div>
-        </div>
+          </a></span>
+        <span
+          class="bg-[rgba(0,0,0,0.86)] rounded-[0.625rem] hover:translate-y-1 gap-y-4 hover:-translate-x-1 transition-all lgs:w-1 md:w-[14rem] md:h-[16rem]">
+          <a href="#"
+            class="port sm:py-5 sm:px-5 lg:py-5 lg:px-5  py-3 px-3 hover:-translate-y-2 gap-y-4 hover:translate-x-2 transition-all  lgs:w-1 md:w-[14rem] md:h-[16rem] overflow-x-auto">
+            <span class="flex md:grid ux-phbg gap-x-2"><img src="../img/website-design 1.png" alt="" class="lg:w-8 lg:h-8 w-6 h-6" />
+              <p class="font-[700]">
+                <span class="underline decoration-[#FF9910] lg:text-xl text-[1rem] text-black">Web</span>
+                Development
+              </p>
+            </span>
+            <p class="lg:text-[1rem] text-[0.8rem]">
+              Leveraging cutting-edge technologies, I code clean and
+              efficient websites, ensuring both visual appeal and a seamless
+              user experience for visitors.
+            </p>
+          </a></span>
+        <span
+          class="bg-[rgba(0,0,0,0.86)] rounded-[0.625rem] hover:translate-y-1 gap-y-4 hover:-translate-x-1 transition-all lgs:w-1 md:w-[14rem] md:h-[16rem]">
+          <a href="#"
+            class="port sm:py-5 sm:px-5 lg:py-5 lg:px-5  py-3 px-3 hover:-translate-y-2 gap-y-4 hover:translate-x-2 transition-all lgs:w-1 md:w-[14rem] md:h-[16rem]">
+            <span class="md:grid flex gap-x-2 ux-phbg"><img src="../img/vector (1).png" alt="" class="lg:w-8 lg:h-8 w-6 h-6" />
+              <p class="font-[700]">
+                <span class="underline decoration-pink-500 lg:text-xl text-[1rem] text-black">Graphic</span>
+                Design
+              </p>
+            </span>
+            <p class="lg:text-[1rem] text-[0.8rem]">
+              From captivating logos to compelling marketing materials, my
+              graphic design skills create visual masterpieces that convey
+              brand identity and messaging with impact and flair.
+            </p>
+          </a></span>
       </div>
-      <div class="portfolio grid justify-center items-center lg:gap-y-6 md:gap-y-4 gap-y-2">
-        <header class="flex justify-center items-center">
-          <p class="lg:text-3xl font-[700] text-2xl">Portfolio</p>
-        </header>
-        <div class="lg:gap-x-4 gap-x-2 md:flex grid gap-y-2 px-5">
-          <span
-            class="bg-[rgba(0,0,0,0.86)] rounded-[0.625rem] hover:translate-y-1 gap-y-4 hover:-translate-x-1 transition-all md:w-[14rem] md:h-[16rem] lgs:w-1">
-            <a href="#"
-              class="port sm:py-5 sm:px-5 lg:py-5 lg:px-5 py-3 px-3 hover:-translate-y-2 gap-y-4 hover:translate-x-2 transition-all lgs:w-1 md:w-[14rem] md:h-[16rem]">
-              <span class="ux-phbg flex md:grid gap-x-2"><img src="../img/figma.png" class="lg:w-8 lg:h-8 w-6 h-6"
-                  alt="" />
-                <p class="font-[700]">
-                  <span class="underline decoration-sky-500 lg:text-xl text-[1rem] text-black">UI/UX</span>
-                  Design
-                </p>
-              </span>
-              <p class="lg:text-[1rem] text-[0.8rem]">
-                Crafting intuitive interfaces that prioritize user engagement,
-                my UI/UX design expertise seamlessly blends creativity with
-                functionality for a where empathy meets innovation.
-              </p>
-            </a></span>
-          <span
-            class="bg-[rgba(0,0,0,0.86)] rounded-[0.625rem] hover:translate-y-1 gap-y-4 hover:-translate-x-1 transition-all lgs:w-1 md:w-[14rem] md:h-[16rem]">
-            <a href="#"
-              class="port sm:py-5 sm:px-5 lg:py-5 lg:px-5 py-3 px-3 hover:-translate-y-2 gap-y-4 hover:translate-x-2 transition-all lgs:w-1 md:w-[14rem] md:h-[16rem] overflow-x-auto">
-              <span class="flex md:grid ux-phbg gap-x-2"><img src="../img/website-design 1.png" alt=""
-                  class="lg:w-8 lg:h-8 w-6 h-6" />
-                <p class="font-[700]">
-                  <span class="underline decoration-[#FF9910] lg:text-xl text-[1rem] text-black">Web</span>
-                  Development
-                </p>
-              </span>
-              <p class="lg:text-[1rem] text-[0.8rem]">
-                Leveraging cutting-edge technologies, I code clean and
-                efficient websites, ensuring both visual appeal and a seamless
-                user experience for visitors.
-              </p>
-            </a></span>
-          <span
-            class="bg-[rgba(0,0,0,0.86)] rounded-[0.625rem] hover:translate-y-1 gap-y-4 hover:-translate-x-1 transition-all lgs:w-1 md:w-[14rem] md:h-[16rem]">
-            <a href="#"
-              class="port sm:py-5 sm:px-5 lg:py-5 lg:px-5 py-3 px-3 hover:-translate-y-2 gap-y-4 hover:translate-x-2 transition-all lgs:w-1 md:w-[14rem] md:h-[16rem]">
-              <span class="md:grid flex gap-x-2 ux-phbg"><img src="../img/vector (1).png" alt=""
-                  class="lg:w-8 lg:h-8 w-6 h-6" />
-                <p class="font-[700]">
-                  <span class="underline decoration-pink-500 lg:text-xl text-[1rem] text-black">Graphic</span>
-                  Design
-                </p>
-              </span>
-              <p class="lg:text-[1rem] text-[0.8rem]">
-                From captivating logos to compelling marketing materials, my
-                graphic design skills create visual masterpieces that convey
-                brand identity and messaging with impact and flair.
-              </p>
-            </a></span>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact-page" class="h-[100vh]">
-      <span class="text-center mt-4">
-        <h2 class="text-2xl font-bold tracking-tight text-gray-900 lg:text-3xl">
-          Let's Get in Touch!
-        </h2>
+  <section id="contact-page" class=" h-[100vh] ">
+    
+      <span class=" text-center mt-4">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900 lg:text-3xl">Let's Get in Touch!</h2>
       </span>
       <div class="flex justify-around items-center">
-        <div id="personal-info" class="md:grid hidden gap-y-4">
+        <div id="personal-info" class="md:grid hidden gap-y-4 ">
           <div class="flex gap-x-2">
             <div class="w-16 h-16 flex justify-center items-center rounded-[50%] bg-[#893605]">
               <img src="../img/home (1).png" class="w-8 h-8" alt="" />
@@ -551,33 +575,35 @@
         </div>
         <div class="w-[27rem] h-[30rem] form">
           <form action="#" method="POST" class="  ">
-            <div class="grid gap-x-8 grid-cols-2 ">
+            <div class="grid gap-x-8 grid-cols-2">
               <div>
-                <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
+                <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First
+                  name</label>
                 <div class="mt-2.5">
                   <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset bg-[#f1ece3] ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#8c3e0a] sm:text-sm sm:leading-6" />
+                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset bg-[#f1ece3] ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#8c3e0a] sm:text-sm sm:leading-6">
                 </div>
               </div>
               <div>
-                <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
+                <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Last
+                  name</label>
                 <div class="mt-2.5">
                   <input type="text" name="last-name" id="last-name" autocomplete="family-name"
-                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset bg-[#f1ece3] ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#8c3e0a] sm:text-sm sm:leading-6" />
+                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset bg-[#f1ece3] ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#8c3e0a] sm:text-sm sm:leading-6">
                 </div>
               </div>
               <div class="sm:col-span-2">
                 <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Company</label>
                 <div class="mt-2.5">
                   <input type="text" name="company" id="company" autocomplete="organization"
-                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset bg-[#f1ece3] ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#8c3e0a] sm:text-sm sm:leading-6" />
+                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset bg-[#f1ece3] ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#8c3e0a] sm:text-sm sm:leading-6">
                 </div>
               </div>
               <div class="sm:col-span-2">
                 <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
                 <div class="mt-2.5">
                   <input type="email" name="email" id="email" autocomplete="email"
-                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset bg-[#f1ece3] ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#8c3e0a] sm:text-sm sm:leading-6" />
+                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset bg-[#f1ece3] ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#8c3e0a] sm:text-sm sm:leading-6">
                 </div>
               </div>
 
@@ -588,52 +614,50 @@
                     class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset bg-[#f1ece3] ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#8c3e0a] sm:text-sm sm:leading-6"></textarea>
                 </div>
               </div>
-
+          
               <div class="mt-5">
                 <button type="submit"
-                  class="block w-full rounded-md bg-[#8c3e0a] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#a35c2c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8c3e0a]">
-                  Let's talk
-                </button>
+                  class="block w-full rounded-md bg-[#8c3e0a] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#a35c2c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8c3e0a]">Let's
+                  talk</button>
               </div>
             </div>
           </form>
         </div>
-      </div>
 
-      <footer class="h-16 bg-[rgba(0,0,0,0.86)] self-end flex justify-between items-center pl-6 gap-x-4 w-100%">
-        <div class="flex items-center justify-center gap-x-4">
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-            <circle cx="6.5" cy="6.5" r="5.5" fill="#D9D9D9" fill-opacity="0.6" stroke="#AA9898" stroke-width="2" />
-          </svg>
-          <div class="text-[rgba(255,255,255,0.50)] phbg-footer">
-            Made by Ham Songhy , PhnomPenh 2024.
-          </div>
+      </div>
+    
+    <footer class="h-16 bg-[rgba(0,0,0,0.86)] self-end flex justify-between items-center pl-6 gap-x-4 w-100%">
+      <div class="flex items-center justify-center gap-x-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+          <circle cx="6.5" cy="6.5" r="5.5" fill="#D9D9D9" fill-opacity="0.6" stroke="#AA9898" stroke-width="2" />
+        </svg>
+        <div class="text-[rgba(255,255,255,0.50)] phbg-footer">
+          Made by Ham Songhy , PhnomPenh 2024.
         </div>
-        <div class="flex pr-4 gap-x-4 items-center">
-          <a href=""></a><svg id="svg-fb" fill="#ffffff" height="2rem" width="2rem" version="1.1" id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512"
-            xml:space="preserve" stroke="#ffffff">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <path id="fb" fill="rgba(255,255,255,0.50)"
-                d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M169.5,357.6l-2.9,38.3h-39.3 v133H77.7v-133H51.2v-38.3h26.5v-25.7c0-11.3,0.3-28.8,8.5-39.7c8.7-11.5,20.6-19.3,41.1-19.3c33.4,0,47.4,4.8,47.4,4.8l-6.6,39.2 c0,0-11-3.2-21.3-3.2c-10.3,0-19.5,3.7-19.5,14v29.9H169.5z">
-              </path>
-            </g>
-          </svg><svg width="2rem" height="2rem" viewBox="0 -0.5 24 24" id="svg-github"
-            xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <path id="github" fill-rule="evenodd" clip-rule="evenodd"
-                d="M12.2047 0.00001C6.56031 -0.005731 1.74628 4.08615 0.842541 9.6577C-0.061195 15.2293 3.2126 20.6331 8.56941 22.4118C9.14823 22.5177 9.35294 22.1577 9.35294 21.8541C9.35294 21.5506 9.35294 20.8588 9.35294 19.8988C6.14117 20.5977 5.46353 18.3529 5.46353 18.3529C5.25046 17.6572 4.79779 17.0595 4.18588 16.6659C3.14823 15.96 4.27059 15.96 4.27059 15.96C5.00761 16.0641 5.65578 16.5014 6.02823 17.1459C6.34368 17.7179 6.87393 18.1406 7.50179 18.3208C8.12965 18.5009 8.8034 18.4236 9.37411 18.1059C9.41842 17.5252 9.66876 16.9794 10.08 16.5671C7.5247 16.2777 4.84235 15.2894 4.84235 10.92C4.82481 9.7786 5.24688 8.67412 6.02117 7.8353C5.67632 6.84285 5.71662 5.7571 6.13412 4.79295C6.13412 4.79295 7.10117 4.48236 9.29647 5.97177C11.1816 5.45419 13.1713 5.45419 15.0565 5.97177C17.2518 4.48236 18.2118 4.79295 18.2118 4.79295C18.6351 5.74689 18.6854 6.82486 18.3529 7.81412C19.1272 8.65294 19.5493 9.7574 19.5318 10.8988C19.5318 15.3177 16.8424 16.2847 14.28 16.5459C14.8359 17.1047 15.1218 17.8774 15.0635 18.6635C15.0635 20.2024 15.0635 21.4447 15.0635 21.8188C15.0635 22.1929 15.2682 22.4824 15.8541 22.3694C21.1473 20.5447 24.3569 15.1728 23.4554 9.6469C22.5539 4.1211 17.8034 0.04779 12.2047 0.00001z"
-                fill="rgba(255,255,255,0.50)"></path>
-            </g>
-          </svg>
-        </div>
-      </footer>
-    </section>
-  </div>
+      </div>
+      <div class="flex pr-4 gap-x-4 items-center">
+        <a href=""></a><svg id="svg-fb" fill="#ffffff" height="2rem" width="2rem" version="1.1" id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512"
+          xml:space="preserve" stroke="#ffffff">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path id="fb" fill="rgba(255,255,255,0.50)"
+              d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M169.5,357.6l-2.9,38.3h-39.3 v133H77.7v-133H51.2v-38.3h26.5v-25.7c0-11.3,0.3-28.8,8.5-39.7c8.7-11.5,20.6-19.3,41.1-19.3c33.4,0,47.4,4.8,47.4,4.8l-6.6,39.2 c0,0-11-3.2-21.3-3.2c-10.3,0-19.5,3.7-19.5,14v29.9H169.5z">
+            </path>
+          </g>
+        </svg><svg width="2rem" height="2rem" viewBox="0 -0.5 24 24" id="svg-github" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path id="github" fill-rule="evenodd" clip-rule="evenodd"
+              d="M12.2047 0.00001C6.56031 -0.005731 1.74628 4.08615 0.842541 9.6577C-0.061195 15.2293 3.2126 20.6331 8.56941 22.4118C9.14823 22.5177 9.35294 22.1577 9.35294 21.8541C9.35294 21.5506 9.35294 20.8588 9.35294 19.8988C6.14117 20.5977 5.46353 18.3529 5.46353 18.3529C5.25046 17.6572 4.79779 17.0595 4.18588 16.6659C3.14823 15.96 4.27059 15.96 4.27059 15.96C5.00761 16.0641 5.65578 16.5014 6.02823 17.1459C6.34368 17.7179 6.87393 18.1406 7.50179 18.3208C8.12965 18.5009 8.8034 18.4236 9.37411 18.1059C9.41842 17.5252 9.66876 16.9794 10.08 16.5671C7.5247 16.2777 4.84235 15.2894 4.84235 10.92C4.82481 9.7786 5.24688 8.67412 6.02117 7.8353C5.67632 6.84285 5.71662 5.7571 6.13412 4.79295C6.13412 4.79295 7.10117 4.48236 9.29647 5.97177C11.1816 5.45419 13.1713 5.45419 15.0565 5.97177C17.2518 4.48236 18.2118 4.79295 18.2118 4.79295C18.6351 5.74689 18.6854 6.82486 18.3529 7.81412C19.1272 8.65294 19.5493 9.7574 19.5318 10.8988C19.5318 15.3177 16.8424 16.2847 14.28 16.5459C14.8359 17.1047 15.1218 17.8774 15.0635 18.6635C15.0635 20.2024 15.0635 21.4447 15.0635 21.8188C15.0635 22.1929 15.2682 22.4824 15.8541 22.3694C21.1473 20.5447 24.3569 15.1728 23.4554 9.6469C22.5539 4.1211 17.8034 0.04779 12.2047 0.00001z"
+              fill="rgba(255,255,255,0.50)"></path>
+          </g>
+        </svg>
+      </div>
+    </footer>
+  </section></div>
   <script src="App.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -659,7 +683,20 @@
         });
       });
     });
+
   </script>
+  <script>window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (window.matchMedia('(min-width: 768px)').matches) {
+   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-50px";
+      }
+}
+     
+    }</script>
 </body>
 
 </html>
